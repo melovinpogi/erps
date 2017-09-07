@@ -1,0 +1,21 @@
+﻿
+<div class="navbar nav_title" style="border: 0;">
+    <a href="index.html" class="site_title"><h3><span style="color:#fff;">melovin</span><span style="color:#F6EB14;">pedida</span></h3></a>
+</div>
+<div class="clearfix"></div>
+<!-- menu profile quick info -->
+<div class="profile clearfix">
+    <div class="profile_pic">
+        <img src="~/Content/img/Users-icon.png" class="img-circle profile_img" />
+    </div>
+    <div class="profile_info">
+        <span>Welcome,</span>
+        <h2 class="text-capitalize">@Session["userName"]</h2>
+    </div>
+</div>
+<!-- /menu profile quick info -->
+<br />
+<h2 id="userrole" class="text-capitalize">You're logged as <br /><strong> @Session["userRoleName"]</strong></h2>
+<!-- sidebar menu -->
+@Html.Partial("_Sidebar")
+<!-- /sidebar menu -->

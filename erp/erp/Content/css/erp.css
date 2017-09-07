@@ -1,0 +1,111 @@
+﻿body {
+    font-family: Century Gothic;
+    background: #F7F7F7 !important;
+}
+li.active>a{
+  color: #F6EB14 !important;
+  background-color: #C34A27 !important;
+}
+
+h2,h3,h4{
+  color: #1A1A1A;
+}
+h3{
+  font-family: Century Gothic;
+}
+
+.btn-primary {
+  color: #F6EB14 !important;
+  background-color: #C34A27 !important;
+  border-color: #C34A27 !important;
+  border-radius: 20px;
+  font-family: Century Gothic;
+}
+
+.btn:hover{
+    color: #F6EB14 !important;
+}
+
+a {
+  color: #C34A27 !important;
+}
+.nav.child_menu>li>a, .nav.side-menu>li>a{
+    color: #5A738E!important;
+}
+a:hover,.nav.side-menu>li>a:hover{
+    color: #C34A27 !important;
+}
+
+.login_content form input[type=submit] {
+    margin-left: 0px !important;
+}
+
+.left_col {
+    background: #EDEDED !important;
+}
+
+.nav_menu{
+    background: #C34A27 !important;
+}
+
+/*.nav.child_menu > li > a, .nav.side-menu > li > a {
+    color: #626b7a !important;
+}*/
+.nav.side-menu>li.active>a {
+    color: #F6EB14 !important;
+    background: #C34A27 !important;
+    border-color: #C34A27 !important;
+}
+
+.nav.child_menu>li.active>a {
+    color: #F6EB14 !important;
+    background: #C34A27 !important;
+    border-color: #C34A27 !important;
+}
+.nav.side-menu>li.active, .nav.side-menu>li.current-page {
+    border-right: 5px solid #F6EB14;
+}
+.nav.navbar-nav>li>a {
+    color: #fff !important;
+}
+
+.top_nav .nav .open>a, .top_nav .nav .open>a:focus, .top_nav .nav .open>a:hover, .top_nav .nav>li>a:focus, .top_nav .nav>li>a:hover {
+    background: #F6EB14 !important;
+}
+
+.nav_title{
+    background: #C34A27 !important;
+}
+
+
+#menu_toggle{
+    color: #ffffff !important;
+}
+
+.menu_section h3 {
+    color: #C34A27 !important;
+} 
+
+.profile_info h2,.profile_info span {
+    color: #626b7a !important;
+}
+
+#userrole{
+    padding: 10px !important;
+    border-bottom: 1px solid #C34A27 !important;
+    border-width: unset !important;
+    margin: 5% !important;
+}
+
+footer{
+    background: #EDEDED !important;
+    margin-left: 0px !important;
+    bottom: 0;
+    clear: both;
+    display: block;
+    padding: 5px 0 0;
+    position: fixed;
+    width: 200px;
+    z-index: 999;
+}
+

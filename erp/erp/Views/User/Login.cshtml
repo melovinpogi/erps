@@ -1,0 +1,95 @@
+﻿@model erp.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+
+    if (Session["userID"] != null || Convert.ToInt32(Session["userID"]) != 0)
+    {
+        Response.Redirect("~/Dashboard/Index");
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/nprogress.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.min.css" rel="stylesheet" />
+    <link href="~/Content/css/erp.css" rel="stylesheet" />
+</head>
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    @using (Html.BeginForm())
+            {
+                        @Html.AntiForgeryToken()
+                        if (ViewBag.Message == "error")
+                        {
+                            <div class="alert alert-danger" role="alert">
+                               Invalid Username/Password <span class="fa fa-times"></span>
+                            </div>
+                        }
+                        else if (ViewBag.Message == "success")
+                        {
+                            <div class="alert alert-success" role="alert">
+                                Login Success! <span class="fa fa-check"></span>
+                            </div>
+                        }
+                        else
+                        {
+
+                        }
+                        <div>
+                            <h4>Melovin Pedida</h4>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control",@placeholder = "Username",@required =""} })
+                                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password", @required = "" } })
+                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div>
+                                <div class="clearfix"></div>
+                                <br />
+                                <div>
+                                    <p class="text-center">©2017 All Rights Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </section>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/custom.min.js"></script>
+
+

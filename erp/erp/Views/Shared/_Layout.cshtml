@@ -1,0 +1,89 @@
+﻿@{ 
+    if (Session["userID"] == null || Convert.ToInt32(Session["userID"]) == 0)
+    {
+        Response.Redirect("~/");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/erp.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/bootstrap-progressbar.min.js"></script>
+    <script src="~/Content/js/custom.min.js"></script>
+    <script>
+        $(document).ready(function($) {
+            //$(".right_col").css({ "height": window.innerHeight });
+        });
+    </script>
+    </head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    @Html.Partial("_Header")
+                </div>
+            </div>
+            @Html.Partial("_Top")
+            <div class="right_col" role="main">
+                @RenderBody()
+            </div>
+       </div>
+    </div>
+    <!-- footer content -->
+    <footer>
+        <div class="pull-right">
+            Created by <a href="https://melovinpogi.github.io/">Melovin Pedida</a>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+</body>
+</html>
+<script>
+        $(document).ready(function($) {
+            $('#sidebar-menu').find('a').each(function () {
+                if ($(this).attr('href') == document.URL) {
+                    $(this).parent().addClass('active');
+                    $(this).parent().css({ "margin-top": "3%" });
+                }
+            });
+
+            // This is for Get All Data
+            $("#sidebar-menu li").click(function () {
+                var groupid = $(this).attr("id");
+
+                $.ajax({
+                    url: "@Url.Action("FrontMenu", "Dashboard")",
+                    data: { roleid: @Convert.ToInt32(Session["userRoleID"]),
+                        modulegroupid: groupid
+                            },
+                    type: "GET",
+                    dataType: "text",
+                    beforeSend: function(){
+                        $(".right_col").html("Loading...");
+                    },
+                    success: function (data) {
+                        $(".right_col").html(data);
+                    },
+                    error: function (responseText,err,statusText) {
+                        $(".right_col").html(statusText + ". Failed! Please try again." );
+                    }
+                });
+
+            });
+        });
+</script>
+
