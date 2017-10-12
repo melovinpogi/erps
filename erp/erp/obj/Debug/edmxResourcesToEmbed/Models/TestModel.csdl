@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="erpsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sys_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="emailConfirm" Type="Boolean" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateRegistry" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="accessFailedCount" Type="Boolean" Nullable="false" />
+    <Property Name="lastLogged" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="userRoleID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="erpsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sys_user" EntityType="Self.sys_user" />
+  </EntityContainer>
+</Schema>

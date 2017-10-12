@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="erpsModelStoreContainer" CdmEntityContainer="erpsEntities">
+    <EntitySetMapping Name="sys_user">
+      <EntityTypeMapping TypeName="erpsModel.sys_user">
+        <MappingFragment StoreEntitySet="sys_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="emailConfirm" ColumnName="emailConfirm" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="dateRegistry" ColumnName="dateRegistry" />
+          <ScalarProperty Name="accessFailedCount" ColumnName="accessFailedCount" />
+          <ScalarProperty Name="lastLogged" ColumnName="lastLogged" />
+          <ScalarProperty Name="userRoleID" ColumnName="userRoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

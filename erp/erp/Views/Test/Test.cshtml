@@ -1,0 +1,24 @@
+﻿@model erp.Models.sys_user
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Test", "Test", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.username)</td>
+            <td>@Html.DropDownListFor(model => model.id, new SelectList(Model.UserDD, "id", "username"), "select")</td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="submit" name="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
