@@ -97,6 +97,19 @@ select	*
 from	@table
 order by userid
 
+
+
+select 0,
+	userid,
+	0,
+	hrs,
+	pay_reg,
+	ot_hrs,
+	pay_ot,
+	hrs + ot_hrs as total_hrs, -- total hrs
+	pay_reg + pay_ot as gross -- gross
+from	@table
+
 select	a.firstname,
 			b.entry_date,
 			b.start_time,
