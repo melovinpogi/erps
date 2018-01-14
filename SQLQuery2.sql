@@ -7,8 +7,7 @@ begin
 			c.link,
 			d.icon as group_icon,
 			c.id as module_id,
-			d.id as group_id,
-			c.seq
+			d.id as group_id
 	from	sys_user a
 	
 			inner join sys_user_access b on
